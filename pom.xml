@@ -76,7 +76,7 @@
                     <region>brazilsouth</region>
                     <pricingTier>F1</pricingTier>
                     <runtime>
-                        <os>linux</os>
+                        <os>windows</os>
                         <javaVersion>java8</javaVersion>
                         <webContainer>java8</webContainer>
                     </runtime>
