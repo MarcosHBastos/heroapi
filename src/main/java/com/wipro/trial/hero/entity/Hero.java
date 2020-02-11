@@ -1,12 +1,25 @@
 package com.wipro.trial.hero.entity;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
+@Table
 public class Hero extends BaseEntity {
 
     private String name;
-    private String superpower;
+
+    @ManyToOne
+    @JoinColumn(name = "id_team")
+    private Team team;
+
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "hero_superpower",
+            joinColumns = @JoinColumn(name = "hero_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "superpower_id", referencedColumnName = "id"))
+    private Set<Superpower> superpowers;
 
     public String getName() {
         return name;
@@ -16,11 +29,19 @@ public class Hero extends BaseEntity {
         this.name = name;
     }
 
-    public String getSuperpower() {
-        return superpower;
+    public Team getTeam() {
+        return team;
     }
 
-    public void setSuperpower(String superpower) {
-        this.superpower = superpower;
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public Set<Superpower> getSuperpowers() {
+        return superpowers;
+    }
+
+    public void setSuperpowers(Set<Superpower> superpowers) {
+        this.superpowers = superpowers;
     }
 }
