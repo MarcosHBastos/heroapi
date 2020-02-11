@@ -1,7 +1,6 @@
 package com.wipro.trial.hero.service;
 
 import com.wipro.trial.hero.entity.Hero;
-import com.wipro.trial.hero.entity.Superpower;
 import com.wipro.trial.hero.repository.HeroRepository;
 import com.wipro.trial.hero.repository.SuperpowerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@Deprecated
 public class HeroService {
 
     @Autowired
