@@ -2,7 +2,6 @@ package com.wipro.trial.hero.controller;
 
 import com.wipro.trial.hero.entity.Hero;
 import com.wipro.trial.hero.repository.HeroRepository;
-import com.wipro.trial.hero.service.HeroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,9 +10,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/hero")
 public class HeroController {
-
-    /*@Autowired
-    private HeroService heroService;*/
 
     @Autowired
     private HeroRepository heroRepository;
