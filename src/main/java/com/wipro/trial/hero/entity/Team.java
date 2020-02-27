@@ -20,10 +20,6 @@ public class Team extends BaseEntity {
         this.name = name;
     }
 
-    /*public Set<Hero> getHeroList() {
-        return heroList;
-    }*/
-
     public void setHeroList(Set<Hero> heroList) {
         this.heroList = heroList;
     }

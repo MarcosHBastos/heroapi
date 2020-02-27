@@ -9,7 +9,7 @@ public class Hero extends BaseEntity {
 
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "id_team")
     private Team team;
 

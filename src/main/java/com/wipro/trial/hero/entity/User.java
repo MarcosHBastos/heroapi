@@ -2,21 +2,31 @@ package com.wipro.trial.hero.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "tb_user")
 public class User extends BaseEntity {
 
-    private String email;
+    private String username;
     private String password;
-    private boolean active;
+    private boolean active = false;
+    private String email;
 
-    public String getEmail() {
-        return email;
+    public User() {
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -33,5 +43,13 @@ public class User extends BaseEntity {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

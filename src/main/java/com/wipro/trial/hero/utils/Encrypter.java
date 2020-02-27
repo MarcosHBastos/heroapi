@@ -1,10 +1,10 @@
 package com.wipro.trial.hero.utils;
 
-import org.springframework.util.DigestUtils;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 
 public class Encrypter {
 
     public static String encrypt(String password) {
-        return DigestUtils.md5DigestAsHex(password.getBytes());
+        return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 }
